@@ -1,0 +1,27 @@
+<div>
+    <div class = "dashboard">
+        <img height="250" width="250" src="http://192.168.4.37:8080/mpclothingstorelogo.png" alt="mp clothing store logo">
+        <button type="button" class = "loginbutton">Login</button>
+        <div class ="myButtons">
+            <button class = "button" (click)="makePageActive(0)">Home</button>
+            <button class = "button" (click)="makePageActive(1)">Featured Items</button>
+            <button class ="button" (click)="makePageActive(2)">Shop By Category</button>
+            <button class ="button" (click)="makePageActive(3)">Cart</button>
+        </div>
+    </div>
+    <div class = "page">
+        <div  *ngIf="homeActive">
+            <app-home></app-home>
+        </div>
+        <div *ngIf="featuredItemsActive">
+            <app-featured-items></app-featured-items>
+        </div>
+        <div *ngIf="shopByCategoryActive">
+            <app-shop-by-category></app-shop-by-category>
+        </div>
+        <div *ngIf="cartActive">
+            <app-cart></app-cart>
+        </div>
+    </div>
+    
+</div>
